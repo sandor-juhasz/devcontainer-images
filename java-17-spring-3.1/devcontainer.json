@@ -1,0 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Java-17",
+	"image": "ghcr.io/sandor-juhasz/devcontainer-features/java:latest",
+	"features": {
+		"ghcr.io/sandor-juhasz/devcontainer-features/java:latest": {
+			"installMaven": true
+		}
+	}
+	
+}
