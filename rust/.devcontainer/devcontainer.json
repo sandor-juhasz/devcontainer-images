@@ -4,7 +4,8 @@
 	"name": "Rust",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
-		"ghcr.io/sandor-juhasz/devcontainer-features/rust:latest": {
-		}
+		"ghcr.io/sandor-juhasz/devcontainer-features/utilities:latest": {},
+		"ghcr.io/sandor-juhasz/devcontainer-features/rust:latest": {}
 	}
+
 }

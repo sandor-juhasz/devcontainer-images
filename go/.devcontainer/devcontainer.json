@@ -4,7 +4,7 @@
 	"name": "Go",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
-		"ghcr.io/sandor-juhasz/devcontainer-features/go:latest": {
-		}
+		"ghcr.io/sandor-juhasz/devcontainer-features/utilities:latest": {},
+		"ghcr.io/sandor-juhasz/devcontainer-features/go:latest": {}
 	}
 }
