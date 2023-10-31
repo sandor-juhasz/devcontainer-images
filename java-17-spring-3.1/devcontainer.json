@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "Java-17",
-	"image": "ghcr.io/sandor-juhasz/devcontainer-features/java:latest",
+	"image": "ghcr.io/sandor-juhasz/devcontainer-images/java:latest",
 	"features": {
 		"ghcr.io/sandor-juhasz/devcontainer-features/java:latest": {
 			"installMaven": true
