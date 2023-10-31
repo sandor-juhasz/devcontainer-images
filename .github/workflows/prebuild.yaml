@@ -7,10 +7,24 @@ on: # rebuild any PRs and main branch changes
 permissions:
   packages: write
 jobs:
-  prebuild:
+  list-images:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+      - name: List image directories
+        id: set-matrix
+        run: echo "::set-output name=matrix::$(/bin/ls -1 -d */ | tr -d "/" | jq -R -s -c 'split("\n")[:-1]')"
 
+  prebuild:
+    needs: list-images
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: ${{ fromJson(needs.list-images.outputs.matrix) }}
+    steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
 
@@ -24,7 +38,7 @@ jobs:
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/sandor-juhasz/devcontainer-images/rust
-          cacheFrom: ghcr.io/sandor-juhasz/devcontainer-images/rust
+          imageName: ghcr.io/sandor-juhasz/devcontainer-images/${{ matrix.image }}
+          cacheFrom: ghcr.io/sandor-juhasz/devcontainer-images/${{ matrix.image }}
           push: always
-          subFolder: rust
+          subFolder: ${{ matrix.image }}
