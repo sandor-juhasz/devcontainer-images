@@ -1,0 +1,21 @@
+{
+	"name": "Python 3",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+
+	"features": {
+		"ghcr.io/sandor-juhasz/devcontainer-features/utilities:latest": {},
+		"ghcr.io/sandor-juhasz/devcontainer-features/python:latest": {
+			"defaultPythonVersion": "3.12.0"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}		
+}
