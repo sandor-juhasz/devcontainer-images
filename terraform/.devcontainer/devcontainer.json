@@ -1,0 +1,8 @@
+{
+	"name": "Terraform",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+
+	"features": {
+		"ghcr.io/sandor-juhasz/devcontainer-features/terraform:latest": {}
+	}
+}
